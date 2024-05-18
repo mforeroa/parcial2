@@ -31,8 +31,8 @@ export class SocioService {
     }
 
     async update(id: string, socio: SocioEntity): Promise<SocioEntity> {
-        const persistedSocio: SocioEntity = await this.socioRepository.findOne({where:{id}});//verificar que museo exista
-        if (!persistedSocio)//verificar si si encontro el museo  
+        const persistedSocio: SocioEntity = await this.socioRepository.findOne({where:{id}});
+        if (!persistedSocio)
           throw new BusinessLogicException("The socio with the given id was not found", BusinessError.NOT_FOUND);
         else if(!socio.correo.includes('@'))
             throw new BusinessLogicException("Invalid email format", BusinessError.PRECONDITION_FAILED);
