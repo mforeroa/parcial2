@@ -16,23 +16,23 @@ export class ClubSocioController {
         return await this.clubSocioService.addMemberToClub(clubId, socioId);
     }
  
-    @Get(':clubId/socios/:memberId')
+    @Get(':clubId/members/:memberId')
     async findMemberFromClub(@Param('clubId') clubId: string, @Param('memberId') socioId: string){
         return await this.clubSocioService.findMemberFromClub(clubId, socioId);
     }
  
-    @Get(':clubId/socios')
+    @Get(':clubId/members')
     async findMembersFromClub(@Param('clubId') clubId: string){
         return await this.clubSocioService.findMembersFromClub(clubId);
     }
  
-    @Put(':clubId/socios')
+    @Put(':clubId/members')
     async updateMembersFromClub(@Body() sociosDto: SocioDto[], @Param('clubId') clubId: string){
         const socios = plainToInstance(SocioEntity, sociosDto)
         return await this.clubSocioService.updateMembersFromClub(clubId, socios);
     }
  
-    @Delete(':clubId/socios/:socioId')
+    @Delete(':clubId/members/:socioId')
      @HttpCode(204)
     async deleteMemberFromClub(@Param('clubId') clubId: string, @Param('socioId') socioId: string){
         return await this.clubSocioService.deleteMemberFromClub(clubId, socioId);
