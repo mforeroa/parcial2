@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {Contains, IsDate, IsNotEmpty, IsString} from 'class-validator';
+import {Contains, IsNotEmpty, IsString} from 'class-validator';
 export class SocioDto {
 
     @IsString()
@@ -11,7 +11,6 @@ export class SocioDto {
     @IsString()
     readonly correo: string;
 
-    @IsDate()
     @IsNotEmpty()
     readonly fechaNacimineto: Date;
 

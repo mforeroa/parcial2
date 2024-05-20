@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
-import {IsDate, IsNotEmpty, IsString, IsUrl, MaxLength} from 'class-validator';
+import {IsNotEmpty, IsString, IsUrl, MaxLength} from 'class-validator';
 export class ClubDto {
     @IsString()
     @IsNotEmpty()
     readonly nombre: string;
 
-    @IsDate()
     @IsNotEmpty()
     readonly fechaFundacion: Date;
 

@@ -2,8 +2,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { SocioEntity } from './socio.entity';
 import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
+import { SocioEntity } from './socio.entity';
 
 @Injectable()
 export class SocioService {
